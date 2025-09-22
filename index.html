@@ -3,42 +3,142 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Saena — Próximamente</title>
+  <title>Saena Energía | Nueva web en construcción</title>
+  <meta name="description" content="Muy pronto lanzamos nuestra nueva casa digital. Mientras tanto, contáctanos para cotizar tu proyecto solar: +57 300 382 8560 · info@saena.co">
+  <link rel="canonical" href="https://saena.co/">
+
+  <!-- Favicon / OG image -->
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="Saena Energía">
+  <meta property="og:description" content="Estamos preparando nuestra nueva casa digital. Escríbenos y te atendemos de inmediato.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saena.co/">
+  <meta property="og:image" content="https://saena.co/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#283049">
+
+  <!-- Tipografía (si quieres Montserrat). Si prefieres performance, elimina estas 3 líneas y usa solo system-ui -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --brand:#F79E00;
-      --navy:#0F1A2D;
-      --white:#FFFFFF;
+    :root{
+      --color-primario:#283049; /* Azul oscuro */
+      --color-texto:#4F8F5E;    /* Verde */
+      --color-fondo:#FEEACF;    /* Crema */
+      --color-cta:#2d7a68;
+      --color-cta-text:#fff;
     }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body {
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,var(--navy),#1a263d);
-      font-family: 'Montserrat', sans-serif;
-      color:var(--white);
-      text-align:center;
+    /* --- Estilos Generales --- */
+    html,body{height:100%}
+    body{
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif; /* <-- Montserrat consistente */
+      background:var(--color-fondo);
+      color:var(--color-texto);
+      margin:0; display:flex; justify-content:center; align-items:center;
+      min-height:100vh; text-align:center; padding:20px;
     }
-    h1 {
-      font-size:clamp(32px,6vw,64px);
-      font-weight:800;
-      margin-bottom:12px;
+    main.container{max-width:640px; width:100%}
+    /* Logo */
+    .logo{width:100%; height:auto; max-width:400px; margin:0 auto 20px}
+    /* Textos */
+    h1{font-size:2rem; font-weight:700; color:var(--color-primario); margin:0 0 12px}
+/* Subtítulo bajo el H1 (estilo Gemini) */
+p.subtitulo{
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 22px;
+}    
+p{
+font-size:1.1rem; 
+line-height:1.6;
+font-weight: 400; /* Mantenemos el regular para que no compita con el subtítulo */
+color: var(--color-primario); /*  */
+margin:0 0 28px;
+}
+    /* CTA botones */
+    .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:22px 0 8px}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px;
+      border:2px solid var(--color-cta); text-decoration:none; font-weight:700;
+      color:var(--color-cta); background:transparent; min-width:200px;
     }
-    p {
-      font-size:clamp(16px,2vw,20px);
-      color:rgba(255,255,255,.8);
+    .btn.fill{background:var(--color-cta); color:var(--color-cta-text)}
+    .btn:focus-visible{outline:3px solid #000; outline-offset:2px}
+    /* Contacto */
+    .contact-info{font-size:1.05rem; margin-top:24px}
+    .contact-info p{font-weight:700; color:var(--color-primario); margin:0 0 12px}
+    .contact-link{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      text-decoration:none; color:var(--color-texto); margin-bottom:10px;
     }
-    .highlight {
-      color:var(--brand);
+    .contact-link:hover{opacity:.9}
+    .icon{width:24px; height:24px; fill:var(--color-primario)}
+    /* Línea */
+    hr{border:0; height:1px; background:#e0e0e0; margin:24px auto; width:50%}
+    /* Responsive */
+    @media (max-width:768px){
+      h1{font-size:1.8rem}
+      .logo{max-width:190px}
+      .btn{min-width:unset; width:100%}
+      hr{width:70%}
     }
+    footer{margin-top:24px; font-size:.9rem; opacity:.85}
+    footer a{color:inherit}
+/* Mostrar “Llamar ahora” solo en móviles */
+.call-only{ display:inline-flex; } /* visible por defecto */
+@media (min-width: 769px){
+  .call-only{ display:none !important; }
+}
   </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Saena Energía",
+    "url":"https://saena.co",
+    "logo":"https://saena.co/logo.svg",
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+57-300-382-8560","contactType":"customer service","areaServed":"CO","availableLanguage":["es"]}]
+  }
+  </script>
+
+  <!-- GA4 o Pixel: pega tu script aquí -->
 </head>
 <body>
-  <div>
-    <h1><span class="highlight">Saena</span></h1>
-    <p>Estamos trabajando en algo especial.<br>Próximamente.</p>
-  </div>
+  <main class="container" role="main">
+    <!-- Usa SVG si lo tienes: /logo.svg -->
+    <img src="SAENA-SIN-FONDO1.png" alt="Logo de Saena Energía" class="logo" loading="eager" decoding="async">
+
+    <h1>Una nueva energía ilumina a Colombia.</h1>
+<p class="subtitulo">El futuro de la energía solar en el país tiene un nuevo nombre: Saena.</p>
+<p>Lideramos la transformación energética del país. Muy pronto encontrarás aquí nuestras soluciones fotovoltaicas para hogar y empresa.</p>
+
+    <div class="cta">
+      <a class="btn fill" href="https://wa.me/573003828560?text=Hola%20Saena,%20quiero%20cotizar%20un%20proyecto%20solar" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+        WhatsApp
+      </a>
+      <a class="btn" href="mailto:info@saena.co?subject=Consulta%20Saena%20Energ%C3%ADa" aria-label="Escríbenos por correo">
+        Escríbenos por correo
+      </a>
+    <!-- Opcional: teléfono directo -->
+      <a href="tel:+573003828560" class="contact-link call-only">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.3 22 2 13.7 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z"/></svg>
+        Llamar ahora
+      </a>
+    </div>
+
+    <hr>
+
+  <footer>
+  © Saena Energía · NIT 901.010.131-8 · Medellín, Colombia ·
+  <a href="tel:+573003828560">+57 300 382 8560</a> ·
+  <a href="mailto:info@saena.co">info@saena.co</a> ·
+  <a href="/privacidad.html">Aviso de privacidad</a>
+</footer>
+  </main>
 </body>
 </html>
